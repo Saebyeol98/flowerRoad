@@ -24,12 +24,12 @@ def checkUser(request, userid):
         data = User.objects.get(userid=str(userid))
         data2 = User.objects.all()
     except:
-        return HttpResponse("Success")
-    return HttpResponse("Fail")
+        return HttpResponse("Success") # 중복 아이디가 없으므로 사용가능
+    return HttpResponse("Fail") # 중복 아이디가 있습니다
 
 def login(request, userid, userpw):
     try:
         data = User.objects.get(userid=str(userid),userpw=str(userpw))
     except Exception:
-        return HttpResponse("Fail")
-    return HttpResponse("Success")
+        return HttpResponse("Fail") # 로그인 실패
+    return HttpResponse("Success") # 로그인 성공
