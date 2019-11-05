@@ -26,3 +26,10 @@ def checkUser(request, userid):
     except:
         return HttpResponse("Success")
     return HttpResponse("Fail")
+
+def login(request, userid, userpw):
+    try:
+        data = User.objects.get(userid=str(userid),userpw=str(userpw))
+    except Exception:
+        return HttpResponse("Fail")
+    return HttpResponse("Success")
