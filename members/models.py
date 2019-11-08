@@ -8,6 +8,7 @@ class User(models.Model):
     birth_date=models.DateField()
     addr=models.TextField()
     gender=models.CharField(max_length=20)
+    email=models.CharField(max_length=40, null=True)
 
     def __str__(self):
         return self.userid
