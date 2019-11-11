@@ -38,3 +38,8 @@ def getNow():
     h_m_s = str(str(now.hour) + ":" + str(now.minute) + ":" + str(now.second))
     date = str(y_m_d + " " + h_m_s)
     return date
+
+
+def selectBoard(request) : 
+    myresult =BoardData.objects.all()
+    return HttpResponse(myresult)
