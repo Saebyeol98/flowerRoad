@@ -10,7 +10,3 @@
 팀원: 강한새별, 김진영, 김시은, 임진우
 
 <h3>역할분담</h3>
-<p>Project Manager: 김진영</p>
-<p>Service Front Web Develop: 김진영, 임진우</p>
-<p>Service Backend Develop: 강한새별, 김대겸, 김진영(Support)</p>
-<p>Designer: 김시은</p>

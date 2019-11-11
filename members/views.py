@@ -8,6 +8,7 @@ from .models import User
 
 def setData(request):
     req_code = request.GET.get("req_code")
+    userid = request.GET.get("userid")
     if req_code is not None:
         if req_code == "find":
             try:
@@ -52,3 +53,7 @@ def setData(request):
 # 향후 구현예정 생년월일 19980101 > 1998-01-01 메서드 구현
 
 # 향후 구현예정 회원가입 후 이메일 인증 구현 SMTP
+
+
+def useradd(request):
+    return render(request, "members/insert.html", {})
