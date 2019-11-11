@@ -42,4 +42,4 @@ def getNow():
 
 def selectBoard(request) : 
     myresult =BoardData.objects.all()
-    return HttpResponse(myresult)
+    return HttpResponse(myresult[0].board_title +' ' +myresult[0].board_content +' ' +myresult[0].board_date)
