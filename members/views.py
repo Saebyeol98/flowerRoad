@@ -29,7 +29,9 @@ def setData(request):
                 userid = request.GET.get("userid")
                 userpw = request.GET.get("userpw")
                 phone = request.GET.get("phone")
+                phone = changeNum(phone)
                 birth_date = request.GET.get("date")
+                birth_date = changeBirth(birth_date)
                 addr = request.GET.get("addr")
                 gender = request.GET.get("gend")
                 email = request.GET.get("email")
@@ -47,12 +49,27 @@ def setData(request):
         return HttpResponse("해당하는 REQ_CODE가 없거나 누락되어있습니다...")
     return HttpResponse("Hello Django~!")
 
-# 향후 구현예정 전화번호 01012319900 > 010-1231-9900 메서드 구현
 
-# 향후 구현예정 생년월일 19980101 > 1998-01-01 메서드 구현
+def changeNum(phone):
+    front = phone[0:3]
+    mid = phone[3:7]
+    end = phone[7:]
 
-# 향후 구현예정 회원가입 후 이메일 인증 구현 SMTP
+    phone = front + '-' + mid + '-' + end
+    return phone
+
+
+def changeBirth(birth_date):
+    year = birth_date[:4]
+    month = birth_date[4:6]
+    day = birth_date[6:]
+
+    birth_date = year + '-' + month + '-' + day
+    return birth_date
 
 
 def useradd(request):
     return render(request, "members/insert.html", {})
+
+    
+# 향후 구현예정 회원가입 후 이메일 인증 구현 SMTP
