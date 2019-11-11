@@ -6,6 +6,7 @@ from members.models import User
 
 
 class BoardData(models.Model):
+    objects = models.Manager()
     board_number = models.AutoField(null=False, primary_key=True)
     board_title = models.CharField(max_length = 126, null=False)
     board_content = models.TextField(null=False)

@@ -14,7 +14,7 @@ def setData(request):
                 userid = request.GET.get("userid")
                 data = User.objects.get(userid=userid)
             except Exception as err:
-                return HttpResponse("Success")  # 중복 아이디가 없으므로 사용가능
+                return HttpResponse(str(err))  # 중복 아이디가 없으므로 사용가능
             return HttpResponse("Fail")  # 중복 아이디가 있습니다
         elif req_code == "login":
             try:
