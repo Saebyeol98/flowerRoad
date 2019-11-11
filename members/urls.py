@@ -2,6 +2,8 @@ from django.urls import path, include
 
 from . import views # .은 현재위치다.
 
+app_name = "members"
+
 urlpatterns = [
     path('', views.setData, name='setData'),
     path('useradd', views.useradd, name='useradd'),
