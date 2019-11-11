@@ -8,13 +8,12 @@ from .models import User
 
 def setData(request):
     req_code = request.GET.get("req_code")
-    userid = request.GET.get("userid")
     if req_code is not None:
         if req_code == "find":
             try:
                 userid = request.GET.get("userid")
                 data = User.objects.get(userid=userid)
-            except Exception:
+            except Exception as err:
                 return HttpResponse("Success")  # 중복 아이디가 없으므로 사용가능
             return HttpResponse("Fail")  # 중복 아이디가 있습니다
         elif req_code == "login":

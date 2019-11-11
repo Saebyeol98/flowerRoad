@@ -20,11 +20,12 @@
         dataType : 'text',
         url : "{% url 'members:setData' %}",
         data : {
-            userid : $('#userid').text(),
-            req_code : "find"
+            userid : $('#userid').val(),
+            req_code : "find",
         },
         cache : false,
         success : function(data) {
+            console.log("id >" + userid),
             alert(data);
         },
         error : function(e) {
