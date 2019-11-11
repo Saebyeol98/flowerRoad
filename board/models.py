@@ -12,6 +12,9 @@ class BoardData(models.Model):
     board_content = models.TextField(null=False)
     board_writer = models.ForeignKey(User, on_delete=models.CASCADE)
     board_date = models.CharField(max_length=140)
+    #ssss
+    #어케하누
+    #어렵누
     
     def __str__(self):
         return super().__str__()
