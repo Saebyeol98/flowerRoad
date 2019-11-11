@@ -8,6 +8,7 @@ from .models import User
 
 def setData(request):
     req_code = request.GET.get("req_code")
+    userid = request.GET.get("userid")
     if req_code is not None:
         if req_code == "find":
             try:
