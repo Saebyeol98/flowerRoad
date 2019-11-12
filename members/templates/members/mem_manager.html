@@ -1,0 +1,95 @@
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+<!-- <form action="{% url 'setData' %}" method="get">
+    <input type="text" name="userid" id="userid" />
+    <input type="hidden" name="req_code" value="find" />
+<input type="submit" value="테스트" />
+</form> -->
+
+<h1>find 테스트</h1>
+아이디 <input type="text" name="userid" id="userid" /> <br />
+<input type="button" id="find" value="눌러" /> <br />
+<hr />
+
+<h1>login 테스트</h1>
+아이디 <input type="text" name="userid" id="userid" /> <br />
+비번<input type="text" name="userpw" id="userpw" /> <br />
+<input type="button" id="login" value="눌러" /> <br />
+<hr />
+
+<h1>register 테스트</h1>
+아이디 <input type="text" name="userid" id="userid" /> <br />
+비번 <input type="text" name="userpw" id="userpw" /> <br />
+전화번호 <input type="text" name="phone" id="phone" /> <br />
+생년월일 <input type="text" name="date" id="date" /> <br />
+주소 <input type="text" name="addr" id="addr" /> <br />
+성별 <input type="text" name="gend" id="gend" /> <br />
+이메일 <input type="text" name="email" id="email" /> <br />
+<input type="button" id="register" value="눌러" /> <br />
+
+<script>  
+    $('#find').click(function() {
+        $.ajax({
+        type : 'GET',
+        dataType : 'text',
+        url : "{% url 'members:setData' %}",
+        data : {
+            userid : $('#userid').val(),
+            req_code : "find"
+        },
+        cache : false,
+        success : function(data) {
+            alert(data);
+        },
+        error : function(e) {
+            alert('error');
+        }
+        });
+    });
+
+    $('#login').click(function() {
+        $.ajax({
+        type : 'GET',
+        dataType : 'text',
+        url : "{% url 'members:setData' %}",
+        data : {
+            userid : $('#userid').val(),
+            userpw : $('#userpw').val(),
+            req_code : "login"
+        },
+        cache : false,
+        success : function(data) {
+            alert(data);
+        },
+        error : function(e) {
+            alert('error');
+        }
+        });
+    });
+
+    $('#register').click(function() {
+        $.ajax({
+        type : 'GET',
+        dataType : 'text',
+        url : "{% url 'members:setData' %}",
+        data : {
+            userid : $('#userid').val(),
+            userpw : $('#userpw').val(),
+            phone : $('#phone').val(),
+            date : $('#date').val(),
+            addr : $('#addr').val(),
+            gend : $('#gend').val(),
+            email : $('#email').val(),
+            req_code : "user_create"
+        },
+        cache : false,
+        success : function(data) {
+            alert(data);
+        },
+        error : function(e) {
+            alert('error');
+        }
+        });
+    });
+</script>
