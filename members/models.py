@@ -12,4 +12,4 @@ class User(models.Model):
     email=models.CharField(max_length=40, null=True)
 
     def __str__(self):
-        return self.userid
+        return super().__str__()
