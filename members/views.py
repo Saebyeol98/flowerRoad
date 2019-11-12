@@ -38,7 +38,7 @@ def setData(request):
                 email = request.GET.get("email")
                 if email is None:
                     addData = User(userid=userid, userpw=userpw, phone_num=phone, birth_date=birth_date, addr=addr,
-                                   gender=gender)
+                                   gender=gender)   
                 else:
                     addData = User(userid=userid, userpw=userpw, phone_num=phone, birth_date=birth_date, addr=addr,
                                    gender=gender, email=email)
@@ -68,11 +68,9 @@ def changeBirth(birth_date):
     birth_date = year + '-' + month + '-' + day
     return birth_date
 
-
-def useradd(request):
-    return render(request, "members/insert.html", {})
-
     
 # 향후 구현예정 회원가입 후 이메일 인증 구현 SMTP
 def man(request):
     return render(request, "members/mem_manager.html", {})
+
+

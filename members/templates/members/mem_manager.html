@@ -8,24 +8,24 @@
 </form> -->
 
 <h1>find 테스트</h1>
-아이디 <input type="text" name="userid" id="userid" /> <br />
+아이디 <input type="text" name="userid" id="find_userid" /> <br />
 <input type="button" id="find" value="눌러" /> <br />
 <hr />
 
 <h1>login 테스트</h1>
-아이디 <input type="text" name="userid" id="userid" /> <br />
-비번<input type="text" name="userpw" id="userpw" /> <br />
+아이디 <input type="text" name="userid" id="login_userid" /> <br />
+비번<input type="text" name="userpw" id="login_userpw" /> <br />
 <input type="button" id="login" value="눌러" /> <br />
 <hr />
 
 <h1>register 테스트</h1>
-아이디 <input type="text" name="userid" id="userid" /> <br />
-비번 <input type="text" name="userpw" id="userpw" /> <br />
-전화번호 <input type="text" name="phone" id="phone" /> <br />
-생년월일 <input type="text" name="date" id="date" /> <br />
-주소 <input type="text" name="addr" id="addr" /> <br />
-성별 <input type="text" name="gend" id="gend" /> <br />
-이메일 <input type="text" name="email" id="email" /> <br />
+아이디 <input type="text" name="userid" id="register_userid" /> <br />
+비번 <input type="text" name="userpw" id="register_userpw" /> <br />
+전화번호 <input type="text" name="phone" id="register_phone" /> <br />
+생년월일 <input type="text" name="date" id="register_date" /> <br />
+주소 <input type="text" name="addr" id="register_addr" /> <br />
+성별 <input type="text" name="gend" id="register_gend" /> <br />
+이메일 <input type="text" name="email" id="register_email" /> <br />
 <input type="button" id="register" value="눌러" /> <br />
 
 <script>  
@@ -35,7 +35,7 @@
         dataType : 'text',
         url : "{% url 'members:setData' %}",
         data : {
-            userid : $('#userid').val(),
+            userid : $('#find_userid').val(),
             req_code : "find"
         },
         cache : false,
@@ -54,8 +54,8 @@
         dataType : 'text',
         url : "{% url 'members:setData' %}",
         data : {
-            userid : $('#userid').val(),
-            userpw : $('#userpw').val(),
+            userid : $('#login_userid').val(),
+            userpw : $('#login_userpw').val(),
             req_code : "login"
         },
         cache : false,
@@ -74,13 +74,13 @@
         dataType : 'text',
         url : "{% url 'members:setData' %}",
         data : {
-            userid : $('#userid').val(),
-            userpw : $('#userpw').val(),
-            phone : $('#phone').val(),
-            date : $('#date').val(),
-            addr : $('#addr').val(),
-            gend : $('#gend').val(),
-            email : $('#email').val(),
+            userid : $('#register_userid').val(),
+            userpw : $('#register_userpw').val(),
+            phone : $('#register_phone').val(),
+            date : $('#register_date').val(),
+            addr : $('#register_addr').val(),
+            gend : $('#register_gend').val(),
+            email : $('#register_email').val(),
             req_code : "user_create"
         },
         cache : false,
