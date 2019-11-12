@@ -12,6 +12,7 @@ def setData(request):
         if req_code == "find":
             try:
                 userid = request.GET.get("userid")
+                print(userid)
                 data = User.objects.get(userid=userid)
             except Exception as err:
                 return HttpResponse(str(err))  # 중복 아이디가 없으므로 사용가능
@@ -73,3 +74,5 @@ def useradd(request):
 
     
 # 향후 구현예정 회원가입 후 이메일 인증 구현 SMTP
+def man(request):
+    return render(request, "members/mem_manager.html", {})

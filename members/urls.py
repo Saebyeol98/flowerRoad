@@ -6,7 +6,7 @@ app_name = "members"
 
 urlpatterns = [
     path('', views.setData, name='setData'),
-    path('useradd', views.useradd, name='useradd'),
+    path('man', views.man, name='man'),
     #path('userid=<userid>&userpw=<userpw>&phone=<phone>&date=<date>&addr=<addr>&gend=<gend>', views.addUser, name='addUser')
     #path('userid=<userid>&userpw=<userpw>', views.login, name='login'),
     #path('userid=<userid>', views.checkUser, name='check')
