@@ -1,11 +1,13 @@
 from django.shortcuts import render
 
-# Create your views here.
 from django.http import HttpResponse, JsonResponse
 from django.urls import path, include
 from members.models import User
 from .models import BoardData
 from datetime import datetime
+from django.shortcuts import render
+from django.shortcuts import get_object_or_404
+
 
 
 def setData(request):
@@ -38,3 +40,31 @@ def getNow():
     h_m_s = str(str(now.hour) + ":" + str(now.minute) + ":" + str(now.second))
     date = str(y_m_d + " " + h_m_s)
     return date
+
+
+def selectBoard(request) : 
+    myresult =BoardData.objects.all()
+    return HttpResponse(myresult[0].board_title +' ' +myresult[0].board_content +' ' +myresult[0].board_date)
+
+
+def select(request) :
+    myresult =BoardData.objects.all()
+    return render(request,'flowerRoad/index.txt',myresult)
+
+
+def BoardDataView(request):
+    template = 'board_data.html'
+    Board_data = BoardData.objects.all()
+
+    return render(request, template, {
+        'board_data': Board_data,
+    })
+
+
+def genderAjax(request,pk):
+    object = get_object_or_404(User, pk=pk)
+
+    data = {
+        'gender'          : User.gender,        
+    }
+    return JsonResponse(data)

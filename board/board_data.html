@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+    <title>Title</title>
+</head>
+<body>
+<table border="1px">
+    <tr>
+        <th>게시판 번호</th>
+        <th>게시글 제목</th>
+        <th>글 내용</th>
+        <th>게시 날짜</th>
+        <th>작성자</th>
+        <th>성별</th>
+    </tr>
+    {% for obj in Board_data %}
+    <tr>
+        <td id="{{obj.id}}_board_number">{{obj.id}}</td>
+        <td>{{obj.board_title}}</td>
+        <td>{{obj.board_content}}</td>
+        <td>{{obj.board_writer}}</td>
+        <td>{{obj.board_date}}</td>
+        <td id="{{obj.id}}_gender"></td>
+    </tr>
+    <script>
+        $(document).ready(function() {
+            var board_number = $("#{{ obj.id }}_board_number").text();
+            var list = { _gender };
+            for (var i = 0; i < list.length; i++){
+                $.ajax({
+                    url : "board/ajax/board_data/"+list[i],
+                    datatype: 'json',
+                    success:function (data){
+                        if (data.board_number == board_number) {
+                            var current = $('#'+board_number+'_gender').text();
+                            if (current == ''){
+                                current = 0;
+                                $('#'+board_number+'_gender').text(data.board_number);
+                            }
+                            else{
+                                current = $('#'+board_number+'_gender').text();
+                                $('#'+board_number+'_gender').text(parseInt(current)+parseInt(data.board_number));
+                            }
+                        }
+                    }
+                });
+            }
+         });
+        </script>
+        {% endfor %}
+</table>
+
+
+</body>
+</html>

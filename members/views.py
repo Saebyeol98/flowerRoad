@@ -13,8 +13,8 @@ def setData(request):
             try:
                 userid = request.GET.get("userid")
                 data = User.objects.get(userid=userid)
-            except Exception:
-                return HttpResponse("Success")  # 중복 아이디가 없으므로 사용가능
+            except Exception as err:
+                return HttpResponse(str(err))  # 중복 아이디가 없으므로 사용가능
             return HttpResponse("Fail")  # 중복 아이디가 있습니다
         elif req_code == "login":
             try:
@@ -52,3 +52,7 @@ def setData(request):
 # 향후 구현예정 생년월일 19980101 > 1998-01-01 메서드 구현
 
 # 향후 구현예정 회원가입 후 이메일 인증 구현 SMTP
+
+
+def useradd(request):
+    return render(request, "members/insert.html", {})
