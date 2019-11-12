@@ -1,0 +1,54 @@
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+<h1>게시글 쓰기 테스트</h1>
+아이디 <input type="text" name="userid" id="write_userid" /> <br />
+게시판 제목 <input type="text" name="title" id="write_title" /> <br />
+게시판 내용 <input type="textarea" width="500" height="500" name="content" id="write_content" /> <br />
+<input type="button" id="write" value="눌러" /> <br />
+<hr />
+
+<h1>게시글 조회 테스트</h1>
+<input type="button" id="select" value="눌러" /> <br />
+<hr />
+
+<script>  
+    $('#write').click(function() {
+        $.ajax({
+        type : 'GET',
+        dataType : 'text',
+        url : "{% url 'board:setData' %}",
+        data : {
+            userid : $('#write_userid').val(),
+            title : $('#write_title').val(),
+            content : $('#write_content').val(),
+            req_code : "board_write"
+        },
+        cache : false,
+        success : function(data) {
+            alert(data);
+        },
+        error : function(e) {
+            alert('error');
+        }
+        });
+    });
+
+    $('#login').click(function() {
+        $.ajax({
+        type : 'GET',
+        dataType : 'text',
+        url : "{% url 'board:setData' %}",
+        data : {
+            req_code : "board_search"
+        },
+        cache : false,
+        success : function(data) {
+            alert(data);
+        },
+        error : function(e) {
+            alert('error');
+        }
+        });
+    });
+</script>

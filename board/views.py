@@ -47,3 +47,7 @@ def getNow():
 def selectBoard(request) : 
     myresult =BoardData.objects.all()
     return HttpResponse(myresult[0].board_title +' ' +myresult[0].board_content +' ' +myresult[0].board_date)
+
+
+def man(request):
+    return render(request, "board/board_manager.html", {})
