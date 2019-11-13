@@ -78,3 +78,22 @@ def login(request):
     return render(request, "members/login.html", {})
 
 
+def register(request):
+    return render(request, "members/userlog.html", {})
+
+    
+def mini(request):
+    return render(request, "members/mini.html", {})
+
+
+def pot(request):
+    return render(request, "members/pot.html", {})
+
+
+def main(request):
+    return render(request, "members/main.html", {})
+
+def diorama(request):
+    return render(request, "members/diorama.html", {})
+
+
