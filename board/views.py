@@ -51,3 +51,7 @@ def selectBoard(request) :
 
 def man(request):
     return render(request, "board/board_manager.html", {})
+
+
+def suggest(request):
+    return render(request, "board/suggest.html", {})

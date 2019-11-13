@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <title>소담</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+            <div class="inner">
+                <a href="{% url 'members:main' %}" class="logo"><img src="/static/image/logo2.png"></a>
+                <nav id="nav">
+                    <a href="{% url 'members:main' %}">홈</a>
+                    <a href="{% url 'board:suggest' %}">제안요청</a>
+                </nav>
+                <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+            </div>
+        </header>
+
+    <footer id="footer">
+        <div class="inner">
+
+            <h3>제안하기</h3>
+
+                <div class="field  first">
+                    <label for="name">제목</label>
+                    <input name="name" id="name" type="text" placeholder="제목">
+                </div>
+
+                <br />
+                <div class="field">
+                    <label for="message">제안내용</label>
+                    <textarea name="message" id="message" rows="6" placeholder="예상금액: XXXX&#13;&#10;완성품을 받아보실 날짜: XXXX&#13;&#10;........"></textarea>
+                </div><br />
+                <ul class="actions">
+                    <li><input value="제안요청서 제출" class="button alt" type="button" onclick="suggest_submit()"></li>
+                </ul>
+
+            <div class="copyright">
+                &copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        function suggest_submit() {
+            alert("문의가 완료되었습니다");
+            location.href = "{% url 'members:main' %}";
+        }
+    </script>
+</body>
+</html>
