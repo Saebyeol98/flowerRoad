@@ -7,4 +7,5 @@ urlpatterns = [
     path('', views.setData, name='setData'),
     path('select',views.selectBoard,name='select'),
     path('man', views.man, name='man'),
+    path('suggest', views.suggest, name='suggest'),
 ]
