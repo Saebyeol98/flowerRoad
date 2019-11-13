@@ -326,6 +326,9 @@
 		background-size: cover;
 		border-top: 1px solid rgba(0, 0, 0, 0.08);
 	}
+/* 
+ banner
+*/
 
 	.banner-text {
 		padding: 5px 10px;
@@ -335,6 +338,18 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		z-index: 4;
+	}
+	.text-header
+	{
+		font-size: xx-large;
+		font-weight: bold;
+		color: #FFF;
+	}
+	
+	.text-body
+	{
+		font-size: large;
+		color: #FFF;
 	}
 
 	/*********************************************************************************/

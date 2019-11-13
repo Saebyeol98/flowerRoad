@@ -34,7 +34,7 @@ Released   : 20130902
 		</div>
 		<div id="menu">
 			<ul>
-				<li class="active"><a href="main.html" accesskey="1" title="">Homepage</a></li>
+				<li class="active"><a href="{% url 'members:main' %}" accesskey="1" title="">Homepage</a></li>
 				<div class="dropdown">
 					<li class="dropbtn" accesskey="3" title="">about us</li>
 					<div class="dropdown-content">
@@ -47,8 +47,9 @@ Released   : 20130902
 	</div>
 
 	<div id="banner"></div>
-	<div>
-		<p class="banner-text">디오라마 어쩌구 저쩌구</p>
+	<div class="banner-text">
+		<p class="text-header">디오라마</p>
+		<p class="text-body">배경을 그린 막 앞에 여러 가지 물건을 배치하고 </br>그것을 잘 조명하여 입체적인 실물감이 나게 하는 장치</p>
 	</div>
 	<div id="page" class="container">
 		<div class="boxA">

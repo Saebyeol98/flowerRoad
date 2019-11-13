@@ -26,10 +26,14 @@
             <label for="password">Password</label>
         </div>
         <button type="submit" value="Login" class="btn" onclick="ckbox()">Login</button>
-        <button type="submit" value="회원가입" class="btn"onclick="location.href='userlog.html'">회원가입</button>
+        <button type="button" value="회원가입" class="btn"onclick="go_register()" >회원가입</button>
     </form>
 </body>
 <script>
+    function go_register() {
+        location.href="{% url 'members:register' %}"
+    }
+
     function ckbox() {
         $.ajax({
         type : 'GET',
