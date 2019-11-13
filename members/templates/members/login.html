@@ -28,6 +28,7 @@
         <button type="submit" value="Login" class="btn" onclick="ckbox()">Login</button>
         <button type="button" value="회원가입" class="btn"onclick="go_register()" >회원가입</button>
     </form>
+
 </body>
 <script>
     function go_register() {
@@ -47,12 +48,18 @@
         cache : false,
         success : function(data) {
             alert(data);
+            if(data == "Success") {
+                location.href = "{% url 'members:main' %}"
+            }
         },
         error : function(e) {
             alert('error');
         }
     });
-        alert("로그인 완료");
+    }
+
+    function register() {
+        location.href = "{% url 'members:register' %}";
     }
 </script>
 
