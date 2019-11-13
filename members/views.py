@@ -74,3 +74,7 @@ def man(request):
     return render(request, "members/mem_manager.html", {})
 
 
+def login(request):
+    return render(request, "members/login.html", {})
+
+
