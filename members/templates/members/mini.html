@@ -29,18 +29,21 @@ Released   : 20130902
 	<body>
 		<div id="header" class="container">
 			<div id="logo">
-				<h1><a href="{% url 'members:mini' %}">mini</a></h1>
+				<h1><a href="{% url 'members:diorama' %}">미니(Mini)</a></h1>
 			</div>
 			<div id="menu">
 				<ul>
-					<li class="active"><a href="{% url 'members:main' %}" accesskey="1" title="">Homepage</a></li>
-					<div class="dropdown">
-						<li class="dropbtn" accesskey="3" title="">about us</li>
-						<div class="dropdown-content">
-							<a href="{% url 'members:diorama' %}">diorama</a>
-							<a href="{% url 'members:pot' %}">pot</a>
+					<li class="active"><a href="{% url 'members:main' %}" accesskey="1" title="">홈</a></li>
+					<li accesskey="3" title=""><a href="{% url 'board:suggest' %}">제안요청</a></li>
+					<ul>
+						<div class="dropdown">
+							<li class="dropbtn" accesskey="3" title="">타 제품</li>
+							<div class="dropdown-content">
+								<a href="{% url 'members:diorama' %}">디오라마</a>
+								<a href="{% url 'members:pot' %}">항아리</a>
+							</div>
 						</div>
-					</div>
+					</ul>
 				</ul>
 			</div>
 		</div>

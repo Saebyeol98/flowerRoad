@@ -26,22 +26,33 @@
 
     <footer id="footer">
         <div class="inner">
-
+            
             <h3>제안하기</h3>
 
-                <div class="field  first">
-                    <label for="name">제목</label>
-                    <input name="name" id="name" type="text" placeholder="제목">
-                </div>
+            <form action="#" method="post">
 
-                <br />
+                <div class="field half first">
+                    <label for="name">제목</label>
+                    <input name="name" id="name" type="text" placeholder="제목"">
+                </div>
+                <div class="field half">
+                    <select>
+                        <option value="1" selected disabled>제품종류</option>
+                        <option value="1">디오라마</option>
+                        <option value="2">항아리</option>
+                        <option value="3">미니</option>
+                        <option value="4">그 외</option>
+
+                    </select>
+                </div>
                 <div class="field">
                     <label for="message">제안내용</label>
-                    <textarea name="message" id="message" rows="6" placeholder="예상금액: XXXX&#13;&#10;완성품을 받아보실 날짜: XXXX&#13;&#10;........"></textarea>
-                </div><br />
+                    <textarea name="message" id="message" rows="6" placeholder="예상금액: XXXX&#13;&#10;완성품을 받아보실 날짜: XXXX&#13;&#10;........""></textarea>
+                </div>
                 <ul class="actions">
-                    <li><input value="제안요청서 제출" class="button alt" type="button" onclick="suggest_submit()"></li>
+                    <li><input value="제안내용 전송" class="button alt" type="button" onclick="suggest_submit()" ></li>
                 </ul>
+            </form>
 
             <div class="copyright">
                 &copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
