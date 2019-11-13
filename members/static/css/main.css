@@ -2929,7 +2929,7 @@
 
 	#banner {
 		padding: 8em 0 9em 0;
-		background-image: url(../../images/banner.jpg);
+		background-image: url('/static/images/banner.jpg');
 		background-size: cover;
 		background-position: bottom;
 		background-attachment: fixed;
@@ -2940,7 +2940,7 @@
 
 		#banner:before {
 			content: '';
-			background-image: url(image/background.png);
+			background-image: url('/static/image/background.png');
 			background-size:cover;
 			position: absolute;
 			width: 100%;
