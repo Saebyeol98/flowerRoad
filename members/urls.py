@@ -5,7 +5,7 @@ from . import views # .은 현재위치다.
 app_name = "members"
 
 urlpatterns = [
-    path('', views.setData, name='setData'),
+    path('', views.setDatad, name='setDatad'),
     path('man', views.man, name='man'),
     path('login', views.login, name='login'),
     path('register', views.register, name='register'),

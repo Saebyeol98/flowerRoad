@@ -6,7 +6,7 @@ from django.urls import path, include
 from .models import User
 
 
-def setData(request):
+def setDatad(request):
     req_code = request.GET.get("req_code")
     if req_code is not None:
         if req_code == "find":

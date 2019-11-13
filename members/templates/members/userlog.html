@@ -117,7 +117,7 @@
                             <input type="tel" placeholder="휴대전화번호" id="tel-number" required />
                         </div>
                         <div class="button-area">
-                            <button type="button" class="btn btn-default">인증</button>
+                            <button type="button" class="btn btn-default" onclick="phNum()">인증</button>
                         </div>
                     <li class="row">
                         <div class="input-area">
@@ -153,7 +153,7 @@
                     </li>
                 </ul>
 
-                <button text="button" class="btn btn-submit">
+                <button text="button" class="btn btn-submit" onclick="logck()">
                     <span class="submit-text">가입하기</span>
                 </button>
             </fieldset>
@@ -174,7 +174,7 @@
                 $.ajax({
                     type : 'GET',
                     dataType : 'text',
-                    url : "{% url 'members:setData' %}",
+                    url : "{% url 'members:setDatad' %}",
                     data : {
                         userid : $('#id').val(),
                         userpw : $('#password').val(),
@@ -250,14 +250,15 @@
 
     <script>
         function logck() {
-            alert("회원가입이 완료 되었습니다")
+            alert("회원가입이 완료 되었습니다");
+            location.href="{% url 'members:main' %}";
         }
 
         function check_dup() {
             $.ajax({
                     type : 'GET',
                     dataType : 'text',
-                    url : "{% url 'members:setData' %}",
+                    url : "{% url 'members:setDatad' %}",
                     data : {
                         userid : $('#id').val(),
                         req_code : "find"
@@ -265,9 +266,9 @@
                     cache : false,
                     success : function(data) {
                         if(data != "Fail") {
-                            alert("사용할 수 있는 아이디입니다");
+                            alert("사용할 수 있는 아이디입니다"+data);
                         } else {
-                            alert("이미 사용중인 아이디입니다");
+                            alert("이미 사용중인 아이디입니다"+data);
                         }
                     },
                     error : function(e) {
