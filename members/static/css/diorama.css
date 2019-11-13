@@ -322,7 +322,7 @@
 	#banner {
 		overflow: hidden;
 		padding: 15em 0em;
-		background: url(image/background.png) no-repeat center;
+		background: url('/static/image/background.png') no-repeat center;
 		background-size: cover;
 		border-top: 1px solid rgba(0, 0, 0, 0.08);
 	}
