@@ -29,20 +29,19 @@
 
             <h3>제안하기</h3>
 
-            <form action="#" method="post">
-                {% csrf_token %}
                 <div class="field  first">
                     <label for="name">제목</label>
                     <input name="name" id="name" type="text" placeholder="제목">
                 </div>
+
+                <br />
                 <div class="field">
                     <label for="message">제안내용</label>
-                    <textarea name="message" id="message" rows="6" placeholder="예상금액: XXXX&#13;&#10;완성품을 받아보실 날짜: XXXX&#13;&#10;......."></textarea>
-                </div>
+                    <textarea name="message" id="message" rows="6" placeholder="예상금액: XXXX&#13;&#10;완성품을 받아보실 날짜: XXXX&#13;&#10;........"></textarea>
+                </div><br />
                 <ul class="actions">
-                    <li><input value="제안요청서 제출" class="button alt" type="submit"></li>
+                    <li><input value="제안요청서 제출" class="button alt" type="button" onclick="suggest_submit()"></li>
                 </ul>
-            </form>
 
             <div class="copyright">
                 &copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
@@ -50,5 +49,12 @@
 
         </div>
     </footer>
+
+    <script>
+        function suggest_submit() {
+            alert("문의가 완료되었습니다");
+            location.href = "{% url 'members:main' %}";
+        }
+    </script>
 </body>
 </html>
