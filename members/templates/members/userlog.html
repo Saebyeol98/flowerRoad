@@ -30,7 +30,7 @@
                             <label for="id" class="blind">아이디</label>
                             <input type="text" placeholder="아이디" id="id" required />
                         </div>
-                        <button type="button" class="btn btn-default">중복확인</button>
+                        <button type="button" class="btn btn-default" onclick="check_dup()">중복확인</button>
                     </li>
                     <li class="row">
                         <div class="input-area">
@@ -251,6 +251,29 @@
     <script>
         function logck() {
             alert("회원가입이 완료 되었습니다")
+        }
+
+        function check_dup() {
+            $.ajax({
+                    type : 'GET',
+                    dataType : 'text',
+                    url : "{% url 'members:setData' %}",
+                    data : {
+                        userid : $('#id').val(),
+                        req_code : "find"
+                    },
+                    cache : false,
+                    success : function(data) {
+                        if(data != "Fail") {
+                            alert("사용할 수 있는 아이디입니다");
+                        } else {
+                            alert("이미 사용중인 아이디입니다");
+                        }
+                    },
+                    error : function(e) {
+                        alert('error');
+                    }
+            });
         }
     </script>
 
